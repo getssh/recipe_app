@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-    get '/users/sign_out', to: 'devise/sessions#destroy'
+    get '/users/sign_out', to: 'devise/sessions#destroy', as: :logout
   end
   resources :recipe_foods
   resources :recipes

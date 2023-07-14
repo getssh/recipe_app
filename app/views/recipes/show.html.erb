@@ -1,5 +1,10 @@
 <p style="color: green"><%= notice %></p>
-
+<%= form_for @recipe do |f| %>
+  <div class="field">
+    <%= f.label :public %>
+    <%= f.check_box :public, { checked: @recipe.public?, onchange: 'this.form.submit();' }, 'true', 'false' %>
+  </div>
+<% end %>
 <%= render @recipe %>
 
 <div>

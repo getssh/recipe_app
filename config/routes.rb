@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy', as: :logout
   end
+  get '/public_recipes', to: 'public_recipes#index'
   resources :recipe_foods
   resources :recipes
   resources :foods
